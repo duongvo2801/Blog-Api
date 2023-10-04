@@ -8,10 +8,9 @@ const { createResponse } = require('../models/responseHelper');
 const fs = require('fs');
 
 
-
 const upload = multer({
     limits: {
-        fileSize: 5000000 // Giới hạn kích thước tệp (5MB)
+        fileSize: 5000000
     },
     fileFilter(req, file, cb) {
         if (!file.originalname.match(/\.(jpg|jpeg|png)$/)) {

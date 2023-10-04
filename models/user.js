@@ -5,7 +5,6 @@ const jwt = require('jsonwebtoken');
 const UserSchema = new mongoose.Schema({
     username: { type: String, required: true },
     password: { type: String, required: true },
-    // Thêm các thông tin khác như email, tên, địa chỉ, ...
 });
 
 UserSchema.pre('save', async function (next) {

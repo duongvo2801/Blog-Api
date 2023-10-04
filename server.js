@@ -2,7 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 mongoose.set('bufferCommands', false);
-// const winston = require('winston');
 const uri = "mongodb+srv://duongvo2801:duongvo2801@app.q8ewdzm.mongodb.net/dbShop?retryWrites=true&w=majority";
 
 const app = express();
@@ -16,8 +15,6 @@ mongoose.connect(uri, {
     const PORT = process.env.PORT || 3000;
     app.listen(PORT, () => {
         console.log(`Server is running on port ${PORT}`);
-         // Sử dụng logger:
-    
     });
 }).catch((error) => {
     console.error("Error connecting to MongoDB:", error);
@@ -31,10 +28,6 @@ const productRouter = require('./routes/productRoutes');
 const orderRouter = require('./routes/orderRoutes');
 const orderDetailRouter = require('./routes/orderDetailRoutes');
 const reviewRouter = require('./routes/productReviewRoutes');
-
-
-
-
 
 require('dotenv').config();
 

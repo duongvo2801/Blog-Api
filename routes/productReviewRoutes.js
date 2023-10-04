@@ -15,6 +15,5 @@ router.post('/productreviews', async (req, res) => {
     });
 });
 
-//... Other CRUD operations for Product Reviews ...
 
 module.exports = router;
