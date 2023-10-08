@@ -97,50 +97,6 @@ router.get('/products', async (req, res) => {
     }
 });
 
-// // Upload image
-// router.post('/products', upload.single('image'), async (req, res) => {
-//     try {
-//         if (!req.file || !req.file.buffer) {
-//             throw new Error("Invalid image data");
-//         }
-
-//         const product = new Product({
-//             image: req.file.buffer,
-//             // You can add other product details here if required
-//         });
-//         await product.save();
-
-//         res.status(201).json(createResponse('success', product, 'Product created with image successfully'));
-//     } catch (error) {
-//         console.log("Image upload error: "+error.message);
-//         res.status(500).json(createResponse('error', null, error.message));
-//     }
-// });
-
-// router.put('/products/:id', upload.single('image'), async (req, res) => {
-//     try {
-//         const productId = req.params.id;
-//           // If the image field in req.body is an object (representing the Image type)
-  
-//          if (!req.file || !req.file.buffer) {
-//             throw new Error("Invalid image data");
-//         }
-
-//         const product = await Product.findById(productId);
-//         if (!product) {
-//             return res.status(404).json(createResponse('error', null, 'Product not found'));
-//         }
-
-//         product.image = req.file.buffer;
-//         await product.save();
-
-//         res.json(createResponse('success', product, 'Product image updated successfully'));
-//     } catch (error) {
-//         res.status(500).json(createResponse('error', null, error.message));
-//     }
-// });
-
-
 
 // Get a specific product
 router.get('/products/:id', async (req, res) => {
@@ -161,35 +117,7 @@ router.get('/products/:id', async (req, res) => {
     }
 });
 
-    // put old
-// router.put('/products/:id', upload.single('image'), async (req, res) => {
-//     console.log("Received body:", req.body);
-//     console.log("Received file:", req.file);
-//     const updates = {
-//         name: req.body.name,
-//         price: parseFloat(req.body.price),
-//         description: req.body.description,
-//         category: req.body.category
-//     };
 
-//     if (req.file && req.file.buffer) {
-//         updates.image = req.file.buffer;
-//     } else {
-//         throw new Error("Invalid image data");
-//     }
-
-//     console.log("Updating product with ID:", req.params.id);
-//     console.log("Received updates:", updates);
-
-//     const product = await Product.findByIdAndUpdate(req.params.id, updates, { new: true, runValidators: true });
-//     if (product) {
-//         res.send(product);
-
-//     }else{
-//         return res.status(404).json(createResponse('error', null, 'Product not found'));
-
-//     }
-// });
 // put new 
 router.put('/products/:id', upload.single('image'), async (req, res) => {
     try {
